@@ -1,4 +1,3 @@
 # git ignore commit files
 
 /.idea/
-**/__pycache__/
