@@ -64,3 +64,12 @@ export const outputCanvasToImage = (root, filename) => {
     link.click();
     URL.revokeObjectURL(url);
 }
+
+/**
+ * 清空画布
+ * @param {CanvasRenderingContext2D} ctx context 2d对象 
+ */
+export const clearCanvas = ctx => {
+    ctx.fillStyle = config.canvas.bgColor;
+    ctx.fillRect(0, 0, config.canvas.width, config.canvas.height);
+}

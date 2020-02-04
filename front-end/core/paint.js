@@ -1,5 +1,5 @@
 import config from '../config/index.js'
-import { outputCanvasToImage } from './utils.js'
+import { outputCanvasToImage, clearCanvas } from './utils.js'
 
 /**
  * paint对象，canvas绘制，键盘事件监听
@@ -66,9 +66,13 @@ export class Paint {
                 }
             }
         }
-        // 按下会车下载图片
+        // 按下回车下载图片
         if (event.keyCode === config.output.keyCode) {
             outputCanvasToImage(this._root, new Date().getTime())
+        }
+
+        if (event.keyCode === config.paint.clear) {
+            clearCanvas(this._ctx)
         }
     }
 

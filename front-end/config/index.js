@@ -8,7 +8,8 @@ export default {
         lineStyle: '#000' // 画笔颜色
     },
     paint: {
-        keyCode: 32 // 空格键开始绘画
+        keyCode: 32, // 空格键开始绘画
+        clear: 8 // delete键清空画布
     },
     output: {
         image: 'jpeg', // 图片格式  jpeg | png
