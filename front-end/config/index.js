@@ -3,7 +3,7 @@ export default {
         width: 280, // 画布宽度
         height: 280, // 画布高度
         bgColor: '#fff', // 白色背景
-        scale: 0.1, // 缩放比例
+        scale: 1, // 缩放比例
         lineWidth: 5, // 画笔粗细
         lineStyle: '#000' // 画笔颜色
     },

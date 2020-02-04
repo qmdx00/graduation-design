@@ -9,8 +9,8 @@ let ctx = root.getContext('2d')
 ctx.canvas.width = config.canvas.width
 ctx.canvas.height = config.canvas.height
 // 设置canvas导出图片的背景颜色
-ctx.fillStyle = config.canvas.bgColor;
-ctx.fillRect(0, 0, config.canvas.width, config.canvas.height);
+ctx.fillStyle = config.canvas.bgColor
+ctx.fillRect(0, 0, config.canvas.width, config.canvas.height)
 // 设置画笔粗细和颜色
 ctx.lineWidth = config.canvas.lineWidth
 ctx.strokeStyle = config.canvas.lineStyle

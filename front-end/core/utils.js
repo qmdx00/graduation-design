@@ -58,11 +58,11 @@ export const outputCanvasToImage = (root, filename) => {
     let url = URL.createObjectURL(blob)
     let link = document.createElement('a')
     link.href = url
-    link.setAttribute("download", `${filename}.${getTypeSuffix(content)}`);
+    link.setAttribute("download", `${filename}.${getTypeSuffix(content)}`)
     link.style.display = 'none'
     document.body.appendChild(link)
-    link.click();
-    URL.revokeObjectURL(url);
+    link.click()
+    URL.revokeObjectURL(url)
 }
 
 /**
@@ -70,6 +70,6 @@ export const outputCanvasToImage = (root, filename) => {
  * @param {CanvasRenderingContext2D} ctx context 2d对象 
  */
 export const clearCanvas = ctx => {
-    ctx.fillStyle = config.canvas.bgColor;
-    ctx.fillRect(0, 0, config.canvas.width, config.canvas.height);
+    ctx.fillStyle = config.canvas.bgColor
+    ctx.fillRect(0, 0, config.canvas.width, config.canvas.height)
 }
