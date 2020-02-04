@@ -70,7 +70,7 @@ export class Paint {
         if (event.keyCode === config.output.keyCode) {
             outputCanvasToImage(this._root, new Date().getTime())
         }
-
+        // 按下Del清空画布
         if (event.keyCode === config.paint.clear) {
             clearCanvas(this._ctx)
         }
