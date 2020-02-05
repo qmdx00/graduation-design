@@ -3,3 +3,5 @@
 /.idea/
 **/.DS_Store
 **/node_modules
+**/.ipynb_checkpoints
+**/*.h5
