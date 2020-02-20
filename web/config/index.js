@@ -14,5 +14,8 @@ export default {
     output: {
         image: 'jpeg', // 图片格式  jpeg | png
         keyCode: 13 // 回车键下载图片
+    },
+    websocket: {
+        url: 'ws://localhost:8765'
     }
 }

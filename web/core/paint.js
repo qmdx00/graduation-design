@@ -1,5 +1,5 @@
-import config from '../config/index.js'
-import { outputCanvasToImage, clearCanvas } from './utils.js'
+import config from '../config/index.js.js'
+import { outputCanvasToImage, clearCanvas, sendDataToServer } from './utils.js.js'
 
 /**
  * paint对象，canvas绘制，键盘事件监听
@@ -9,10 +9,12 @@ export class Paint {
      * 构造函数
      * @param {HTMLElement} root canvas元素
      * @param {CanvasRenderingContext2D} ctx Context 2d 对象
+     * @param {WebSocket} socket websocket 对象
      */
-    constructor(root, ctx) {
+    constructor(root, ctx, socket) {
         this._root = root
         this._ctx = ctx
+        this._socket = socket
         // 初始化默认鼠标位置
         this._cur = {x: 0, y: 0}
         // 重置this指向
@@ -47,6 +49,7 @@ export class Paint {
     _handleKeyUp() {
         this._ctx.closePath()
         this._captureMousePosition()
+        sendDataToServer(this._root, this._socket)
     }
 
     /**
@@ -82,6 +85,7 @@ export class Paint {
     initPaint() {
         document.onkeydown = this._bindKey
         this._captureMousePosition()
+        this._socket = new WebSocket(config.websocket.url)
     }
 
 }

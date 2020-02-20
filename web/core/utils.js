@@ -1,4 +1,4 @@
-import config from '../config/index.js'
+import config from '../config/index.js.js'
 /**
  * https://developer.mozilla.org/zh-CN/docs/Web/HTTP/data_URIs
  * https://stackoverflow.com/questions/16245767/creating-a-blob-from-a-base64-string-in-javascript
@@ -64,6 +64,13 @@ export const outputCanvasToImage = (root, filename) => {
     link.click()
     URL.revokeObjectURL(url)
 }
+
+/**
+ * send base64 string to server
+ * @param {HTMLElement} root canvas元素
+ * @param {WebSocket} socket websocket 对象
+ */
+export const sendDataToServer = (root, socket) => socket.send(getData(root.toDataURL(`image/${config.output.image}`, config.canvas.scale)))
 
 /**
  * 清空画布

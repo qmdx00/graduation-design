@@ -1,5 +1,5 @@
-import config from './config/index.js'
-import { Paint } from './core/paint.js'
+import config from './config/index.js.js'
+import { Paint } from './core/paint.js.js'
 
 
 // 获取canvas元素

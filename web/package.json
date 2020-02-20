@@ -10,5 +10,9 @@
   "license": "ISC",
   "devDependencies": {
     "http-server": "^0.12.1"
+  },
+  "dependencies": {
+    "sockjs-client": "^1.4.0",
+    "stompjs": "^2.3.3"
   }
 }
