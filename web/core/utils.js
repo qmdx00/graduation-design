@@ -1,4 +1,4 @@
-import config from '../config/index.js.js'
+import config from '../config/index.js'
 /**
  * https://developer.mozilla.org/zh-CN/docs/Web/HTTP/data_URIs
  * https://stackoverflow.com/questions/16245767/creating-a-blob-from-a-base64-string-in-javascript

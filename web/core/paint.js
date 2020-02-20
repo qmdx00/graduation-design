@@ -1,5 +1,5 @@
-import config from '../config/index.js.js'
-import { outputCanvasToImage, clearCanvas, sendDataToServer } from './utils.js.js'
+import config from '../config/index.js'
+import { outputCanvasToImage, clearCanvas, sendDataToServer } from './utils.js'
 
 /**
  * paint对象，canvas绘制，键盘事件监听
