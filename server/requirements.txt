@@ -1,4 +1,5 @@
-websockets==8.1
+Flask==1.1.1
 opencv_python==4.1.2.30
-matplotlib==3.1.2
+Flask_SocketIO==4.2.1
+requests==2.22.0
 numpy==1.18.0

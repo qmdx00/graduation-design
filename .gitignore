@@ -1,7 +1,8 @@
 # git ignore commit files
 
-/.idea/
+**/.idea/
 **/.DS_Store
 **/node_modules
 **/.ipynb_checkpoints
 **/*.h5
+**/__pycache__

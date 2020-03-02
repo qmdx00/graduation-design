@@ -49,7 +49,18 @@ export class Paint {
     _handleKeyUp() {
         this._ctx.closePath()
         this._captureMousePosition()
-        sendDataToServer(this._root, this._socket)
+
+        sendDataToServer(this._root, this._socket, predict => {
+            let items = []
+            for(let i = 0; i < predict.length; i++) {
+                let item = new Object()
+                item.possible = predict[i]
+                item.value = i
+                items.push(item)
+            }
+            items.sort((a, b) => b.possible - a.possible)
+            console.dir(items)
+        })
     }
 
     /**
@@ -85,7 +96,7 @@ export class Paint {
     initPaint() {
         document.onkeydown = this._bindKey
         this._captureMousePosition()
-        this._socket = new WebSocket(config.websocket.url)
+        this._socket = io.connect(config.websocket.url)
     }
 
 }

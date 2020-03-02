@@ -14,6 +14,7 @@ ctx.fillRect(0, 0, config.canvas.width, config.canvas.height)
 // 设置画笔粗细和颜色
 ctx.lineWidth = config.canvas.lineWidth
 ctx.strokeStyle = config.canvas.lineStyle
+ctx.lineCap = config.canvas.lineCap
 // 初始化paint对象
 let paint = new Paint(root, ctx)
 paint.initPaint()
