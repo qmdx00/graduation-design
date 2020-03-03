@@ -1,2 +1,28 @@
 version: '3'
-# todo
+
+networks:
+  handwriting:
+
+services:
+
+  flask-server:
+    image: flask-server:latest
+    container_name: flask-server
+    restart: always
+    ports:
+      - "5000:5000"
+    hostname: flask
+    depends_on:
+      - handwriting-serving
+    networks:
+      - handwriting
+
+  handwriting-serving:
+    image: handwriting-serving:latest
+    container_name: model-server
+    restart: always
+    ports:
+      - "8501:8501"
+    hostname: model-server
+    networks: 
+      - handwriting

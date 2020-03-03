@@ -13,4 +13,4 @@ RUN pip install -i https://mirrors.aliyun.com/pypi/simple/ -r requirements.txt
 
 EXPOSE 5000
 
-ENTRYPOINT ["flask", "run", "--host", "0.0.0.0"]
+ENTRYPOINT ["python", "app.py"]

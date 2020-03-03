@@ -7,7 +7,7 @@ import numpy as np
 from cv2 import cv2 as cv
 
 app = Flask(__name__)
-io = SocketIO(app)
+io = SocketIO(app, cors_allowed_origins='*')
 
 
 @io.on('connect')
@@ -31,7 +31,7 @@ def convert_base64_to_image(b64_str: str):
 
 def predict_image(image):
     body = {"instances": (image / 255.0)[:, :, 0].tolist()}
-    url = "http://localhost:8501/v1/models/handwriting:predict"
+    url = "http://model-server:8501/v1/models/handwriting:predict"
     headers = {
         'Content-Type': 'application/json'
     }
