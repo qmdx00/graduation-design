@@ -73,11 +73,9 @@ export const outputCanvasToImage = (root, filename) => {
  * @param {Function} callback 回调函数返回预测结果
  */
 export const sendDataToServer = (root, socket, callback) => {
-    console.log("send")
     socket.emit('image', {
         image: getData(root.toDataURL(`image/${config.output.image}`, config.canvas.scale))
     }, callback)
-    // socket.send(getData(root.toDataURL(`image/${config.output.image}`, config.canvas.scale)))
 }
 
 /**

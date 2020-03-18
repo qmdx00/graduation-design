@@ -4,6 +4,7 @@ import { Paint } from './core/paint.js'
 
 // 获取canvas元素
 let root = document.getElementById("canvas")
+let result = document.getElementById("result")
 let ctx = root.getContext('2d')
 // 设置canvas大小
 ctx.canvas.width = config.canvas.width
@@ -16,5 +17,5 @@ ctx.lineWidth = config.canvas.lineWidth
 ctx.strokeStyle = config.canvas.lineStyle
 ctx.lineCap = config.canvas.lineCap
 // 初始化paint对象
-let paint = new Paint(root, ctx)
+let paint = new Paint(root, result, ctx)
 paint.initPaint()

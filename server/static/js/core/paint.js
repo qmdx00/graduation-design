@@ -8,13 +8,14 @@ export class Paint {
     /**
      * 构造函数
      * @param {HTMLElement} root canvas元素
+     * @param {HTMLElement} result ul标签元素
      * @param {CanvasRenderingContext2D} ctx Context 2d 对象
-     * @param {WebSocket} socket websocket 对象
      */
-    constructor(root, ctx, socket) {
+    constructor(root, result, ctx) {
         this._root = root
+        this._result = result
         this._ctx = ctx
-        this._socket = socket
+        this._socket = null;
         // 初始化默认鼠标位置
         this._cur = {x: 0, y: 0}
         // 重置this指向
@@ -59,7 +60,13 @@ export class Paint {
                 items.push(item)
             }
             items.sort((a, b) => b.possible - a.possible)
-            console.dir(items)
+
+            // 填充结果
+            for (let idx in items) {
+                let li = document.createElement("li");
+                li.innerHTML = `value: ${items[idx].value}, possibility: ${Number(items[idx].possible * 100).toFixed(3)}%`;
+                result.appendChild(li);
+            }
         })
     }
 
@@ -96,7 +103,7 @@ export class Paint {
     initPaint() {
         document.onkeydown = this._bindKey
         this._captureMousePosition()
-        this._socket = io.connect(config.websocket.url)
+        this._socket = io("/")
     }
 
 }
