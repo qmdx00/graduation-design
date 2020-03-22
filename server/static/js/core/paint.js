@@ -63,9 +63,10 @@ export class Paint {
 
             // 填充结果
             for (let idx in items) {
+                if (this._result.childElementCount === 10) this._result.innerHTML = "";
                 let li = document.createElement("li");
                 li.innerHTML = `value: ${items[idx].value}, possibility: ${Number(items[idx].possible * 100).toFixed(3)}%`;
-                result.appendChild(li);
+                this._result.appendChild(li);
             }
         })
     }
@@ -94,6 +95,7 @@ export class Paint {
         // 按下Del清空画布
         if (event.keyCode === config.paint.clear) {
             clearCanvas(this._ctx)
+            this._result.innerHTML = "";
         }
     }
 
