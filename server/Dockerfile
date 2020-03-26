@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN sed -i "s@http://deb.debian.org@https://mirrors.aliyun.com@g" /etc/apt/sources.list && \
+RUN sed -i "s@http://.*.debian.org@https://mirrors.aliyun.com@g" /etc/apt/sources.list && \
     apt-get update && \
     apt-get -y upgrade && \
     apt-get install -y libglib2.0-0 libsm6 libxext6 libxrender-dev
