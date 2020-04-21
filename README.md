@@ -1,6 +1,8 @@
 ### 本科毕业设计
 数字手写体识别
 
+#### 项目架构
+
 #### 项目运行流程
 - clone 项目到本地`git clone https://github.com/qmdx00/graduation-design.git`
 - 本地安装`docker`和`docker-compose`
