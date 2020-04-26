@@ -40,7 +40,7 @@ export class Paint {
             this._ctx.lineTo(event.offsetX, event.offsetY)
             this._ctx.stroke()
             this._cur.x = event.offsetX
-            this._cur.y= event.offsetY
+            this._cur.y = event.offsetY
         }
     }
 
