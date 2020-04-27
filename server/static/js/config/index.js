@@ -4,7 +4,7 @@ export default {
         height: 280, // 画布高度
         bgColor: '#000', // 背景颜色
         scale: 1, // 缩放比例
-        lineWidth: 20, // 画笔粗细
+        lineWidth: 18, // 画笔粗细
         lineStyle: '#fff', // 画笔颜色
         lineCap: 'round' // butt | round | square
     },
