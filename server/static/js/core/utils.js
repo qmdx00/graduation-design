@@ -25,7 +25,7 @@ const getMediaType = content => content.split(';base64,')[0]
 /**
  * from meta get media type suffix.
  * @param {any} content data url
- * @returns {string}
+ * @returns {string} media type suffix
  */
 const getTypeSuffix = content => getMediaType(content).split('/')[1]
 
