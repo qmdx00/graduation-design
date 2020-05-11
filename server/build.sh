@@ -12,7 +12,7 @@ function build_flask_server() {
     else
         echo -e "\033[31mbuild flask-server failed\033[0m"
         pull_python_slim
-fi
+    fi
 }
 
 # pull image python:3.7-slim
